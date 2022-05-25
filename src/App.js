@@ -15,7 +15,7 @@ function App() {
           return {
             ...player,
             formattedDate: moment(player.date).format("DD-MM-YYYY h:mm:ss a"),
-            profile: require(`./player-images/${player.Id}.jpg`),
+            profile: require(`../public/player-images/${player.Id}.jpg`),
           };
         });
         list.sort((a, b) => a.value - b.value);
@@ -52,7 +52,11 @@ function App() {
       <div className="main-content">
         {players.map((player) => (
           <div className="box" key={player.Id}>
-            <img className="player-img" src={player.profile} />
+            <img
+              className="player-img"
+              alt={player.PFName}
+              src={player.profile}
+            />
             <div className="content">
               <p className="title">Name:{player.PFName}</p>
               <p className="skill">Game:{player.SkillDesc}</p>
