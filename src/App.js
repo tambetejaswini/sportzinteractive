@@ -15,7 +15,7 @@ function App() {
           return {
             ...player,
             formattedDate: moment(player.date).format("DD-MM-YYYY h:mm:ss a"),
-            profile: require(`../public/player-images/${player.Id}.jpg`),
+            profile: `player-images/${player.Id}.jpg`,
           };
         });
         list.sort((a, b) => a.value - b.value);
